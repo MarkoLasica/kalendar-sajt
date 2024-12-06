@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raspored Predavanja</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #333;
+      margin: 20px 0;
+      text-align: center;
+      font-weight: bold;
+      background: linear-gradient(90deg, #007BFF, #4CAF50);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .calendar-container {
+      width: 80%;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      border: 2px solid #007BFF;
+      margin-bottom: 20px;
+    }
+
+    .calendar-header {
+      text-align: center;
+      background: #007BFF;
+      color: white;
+      padding: 15px 0;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .calendar {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 5px;
+      padding: 10px;
+      background: #ddd;
+    }
+
+    .day {
+      background: #ffffff;
+      min-height: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 10px;
+      position: relative;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    .day-header {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      font-weight: bold;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .event {
+      margin-top: 5px;
+      padding: 5px;
+      background: #007BFF;
+      color: white;
+      border-radius: 5px;
+      font-size: 0.85rem;
+      line-height: 1.2;
+      text-align: center;
+    }
+
+    .event span {
+      font-size: 0.8rem;
+    }
+
+    .event .subject {
+      font-weight: bold;
+      display: block;
+    }
+
+    /* Dodaj skrolovanje za manje ekrane */
+    body {
+      overflow-y: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Raspored predavanja by ML</h1>
+  <div class="calendar-container">
+    <div class="calendar-header">Decembar 2024</div>
+    <div class="calendar">
+      <!-- Days of the Week -->
+      <div class="day">NED</div>
+      <div class="day">PON</div>
+      <div class="day">UTO</div>
+      <div class="day">SRI</div>
+      <div class="day">ČET</div>
+      <div class="day">PET</div>
+      <div class="day">SUB</div>
+
+      <!-- Days of December -->
+      <div class="day"><div class="day-header">1</div></div>
+      <div class="day"><div class="day-header">2</div>
+        <div class="event">
+          <span class="subject">Istorija ideja</span>
+          17:15h-20:00h - A2
+        </div>
+      </div>
+      <div class="day"><div class="day-header">3</div>
+        <div class="event">
+          <span class="subject">Inženjerska matematika</span>
+          17:15h-18:45h - S36
+        </div>
+      </div>
+      <div class="day"><div class="day-header">4</div>
+        <div class="event">
+          <span class="subject">Metodologija istraživanja 1</span>
+          17:15h-18:45h - A2
+        </div>
+      </div>
+      <div class="day"><div class="day-header">5</div></div>
+      <div class="day"><div class="day-header">6</div>
+        <div class="event">
+          <span class="subject">Napredno programiranje / Nauka o podacima</span>
+          17:15h-18:45h - S36
+        </div>
+      </div>
+      <div class="day"><div class="day-header">7</div>
+        <div class="event">
+          <span class="subject">Digitalna transformacija</span>
+          10:30h-12:00h - S13
+        </div>
+        <div class="event">
+          <span class="subject">Nauka o podacima / Napredno programiranje</span>
+          10:30h-12:00h - S13
+        </div>
+      </div>
+      <div class="day"><div class="day-header">8</div></div>
+      <div class="day"><div class="day-header">9</div></div>
+      <div class="day"><div class="day-header">10</div>
+        <div class="event">
+          <span class="subject">Napredno programiranje / Nauka o podacima</span>
+          17:15h-18:45h - S34
+        </div>
+      </div>
+      <div class="day"><div class="day-header">11</div>
+        <div class="event">
+          <span class="subject">Metodologija istraživanja 1</span>
+          17:15h-18:45h - A2
+        </div>
+      </div>
+      <div class="day"><div class="day-header">12</div></div>
+      <div class="day"><div class="day-header">13</div>
+        <div class="event">
+          <span class="subject">Inženjerska matematika</span>
+          17:15h-18:45h - S36
+        </div>
+      </div>
+      <div class="day"><div class="day-header">14</div>
+        <div class="event">
+          <span class="subject">Digitalna transformacija</span>
+          10:30h-12:00h - S23
+        </div>
+        <div class="event">
+          <span class="subject">Nauka o podacima / Napredno programiranje</span>
+          10:30h-12:00h - S23
+        </div>
+      </div>
+      <div class="day"><div class="day-header">15</div></div>
+      <div class="day"><div class="day-header">16</div>
+        <div class="event">
+          <span class="subject">Istorija ideja</span>
+          17:15h-20:00h - A2
+        </div>
+      </div>
+      <div class="day"><div class="day-header">17</div>
+        <div class="event">
+          <span class="subject">Inženjerska matematika</span>
+          17:15h-18:45h - S34
+        </div>
+      </div>
+      <div class="day"><div class="day-header">18</div>
+        <div class="event">
+          <span class="subject">Metodologija istraživanja 1</span>
+          17:15h-18:45h - A2
+        </div>
+      </div>
+      <div class="day"><div class="day-header">19</div></div>
+      <div class="day"><div class="day-header">20</div>
+        <div class="event">
+          <span class="subject">Napredno programiranje / Nauka o podacima</span>
+          17:15h-18:45h - S36
+        </div>
+      </div>
+      <div class="day"><div class="day-header">21</div>
+        <div class="event">
+          <span class="subject">Digitalna transformacija</span>
+          10:30h-12:00h - S13
+        </div>
+        <div class="event">
+          <span class="subject">Nauka o podacima / Napredno programiranje</span>
+          10:30h-12:00h - S13
+        </div>
+      </div>
+      <!-- Add remaining days -->
+    </div>
+  </div>
+</body>
+</html>
